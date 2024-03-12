@@ -20,7 +20,7 @@ function Blog({ blog, handelBookmarks, handelCounter, handelMarkRead }) {
       </div>
       <div className="flex gap-4 justify-between">
         <div className="flex gap-4">
-          <img className="w-12" src={author_img} alt="" />
+          <img className="w-14" src={author_img} alt="" />
           <div>
             <h3 className="text-2xl font-bold">{author}</h3>
             <p className="text-[#11111199]">{posted_date}</p>
@@ -32,7 +32,7 @@ function Blog({ blog, handelBookmarks, handelCounter, handelMarkRead }) {
         </div>
       </div>
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold">{title}</h1>
+        <h1 className="text-2xl lg:text-4xl font-bold">{title}</h1>
         <div>
           {hashtags.map((hashtag, index) => (
             <p key={index}>
