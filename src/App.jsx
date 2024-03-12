@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="max-w-5xl mx-auto">
       <Header></Header>
-      <div className="grid grid-cols-12 gap-6">
+      <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6">
         <div className="col-span-8">
           <Blogs
             handelBookmarks={handelBookmarks}
