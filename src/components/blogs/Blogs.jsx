@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Blog from '../blog/Blog';
-function Blogs({ handelBookmarks }) {
+function Blogs({ handelBookmarks, handelCounter }) {
   const [data, setData] = useState([]);
   useEffect(() => {
     const loadData = async () => {
@@ -13,7 +13,12 @@ function Blogs({ handelBookmarks }) {
   return (
     <>
       {data.map((blog, index) => (
-        <Blog key={index} blog={blog} handelBookmarks={handelBookmarks}></Blog>
+        <Blog
+          key={index}
+          blog={blog}
+          handelBookmarks={handelBookmarks}
+          handelCounter={handelCounter}
+        ></Blog>
       ))}
     </>
   );

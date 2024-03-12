@@ -1,6 +1,10 @@
 import { IoBookmarks } from 'react-icons/io5';
-function Blog({ blog, handelBookmarks }) {
+function Blog({ blog, handelBookmarks, handelCounter }) {
   const { title, author, author_img, cover, posted_date, reading_time } = blog;
+  const handelOnClick = () => {
+    handelBookmarks(blog);
+    handelCounter()
+  }
   return (
     <div className="space-y-6">
       <div>
@@ -16,7 +20,7 @@ function Blog({ blog, handelBookmarks }) {
         </div>
         <div className="flex gap-2 justify-center items-center">
           <p className="text-[#11111199] font-bold">{reading_time}</p>
-          <IoBookmarks onClick={()=>handelBookmarks(blog)} />
+          <IoBookmarks onClick={handelOnClick} />
         </div>
       </div>
       <div className="space-y-4">

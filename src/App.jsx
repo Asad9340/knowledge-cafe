@@ -5,20 +5,27 @@ import Bookmarks from './components/bookmarks/Bookmarks';
 import { useState } from 'react';
 function App() {
   const [bookmarks, setBookmarks] = useState([])
+  const [counter,setCounter] = useState(0)
 
   const handelBookmarks = (blog) => {
     const newValue = [...bookmarks, blog];
     setBookmarks(newValue);
+  }
+  const handelCounter = () => {
+    setCounter(counter+1);
   }
   return (
     <div className="max-w-5xl mx-auto">
       <Header></Header>
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-8">
-          <Blogs handelBookmarks={handelBookmarks}></Blogs>
+          <Blogs
+            handelBookmarks={handelBookmarks}
+            handelCounter={handelCounter}
+          ></Blogs>
         </div>
         <div className="col-span-4">
-          <Bookmarks bookmarks={bookmarks}></Bookmarks>
+          <Bookmarks bookmarks={bookmarks} counter={counter}></Bookmarks>
         </div>
       </div>
     </div>
