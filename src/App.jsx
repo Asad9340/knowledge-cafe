@@ -15,7 +15,7 @@ function App() {
     setCounter(counter+1);
   }
   return (
-    <div className="max-w-5xl mx-auto">
+    <div className="max-w-5xl mx-auto px-6 md:px-10 lg:px-14">
       <Header></Header>
       <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6">
         <div className="col-span-8">
