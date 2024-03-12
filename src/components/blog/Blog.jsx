@@ -1,12 +1,20 @@
 import { IoBookmarks } from 'react-icons/io5';
-function Blog({ blog, handelBookmarks, handelCounter }) {
-  const { title, author, author_img, cover, posted_date, reading_time } = blog;
+function Blog({ blog, handelBookmarks, handelCounter, handelMarkRead }) {
+  const {
+    title,
+    author,
+    author_img,
+    cover,
+    posted_date,
+    reading_time,
+    hashtags,
+  } = blog;
   const handelOnClick = () => {
     handelBookmarks(blog);
-    handelCounter()
-  }
+    handelCounter();
+  };
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 mb-8 lg:mb-12">
       <div>
         <img className="rounded-xl w-full" src={cover} alt="" />
       </div>
@@ -25,9 +33,18 @@ function Blog({ blog, handelBookmarks, handelCounter }) {
       </div>
       <div className="space-y-4">
         <h1 className="text-4xl font-bold">{title}</h1>
-        <div>hastag</div>
         <div>
-          <button className="py-2 px-4 bg-gray-950 rounded-xl text-white">
+          {hashtags.map((hashtag, index) => (
+            <p key={index}>
+              #<button>{hashtag}</button>
+            </p>
+          ))}
+        </div>
+        <div>
+          <button
+            onClick={() => handelMarkRead(reading_time)}
+            className="py-2 px-4 bg-gray-950 rounded-xl text-white"
+          >
             Mark as Read
           </button>
         </div>
